@@ -3,7 +3,6 @@ package com.sjtu.rbj.bookstore.dao.impl;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.sjtu.rbj.bookstore.dao.UserDao;
@@ -17,38 +16,39 @@ import com.sjtu.rbj.bookstore.repository.UserRepository;
  */
 @Repository
 public class UserDaoImpl implements UserDao {
-
-    @Autowired
-    private UserRepository repository;
+    public UserDaoImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     @Override
     public Optional<User> findByAccount(String account) {
-        return repository.findByUserAccountAccount(account);
+        return userRepository.findByUserAccountAccount(account);
     }
 
     @Override
     public Optional<User> findByAccountAndPasswd(String account, String passwd) {
-        return repository.findByUserAccountAccountAndUserAccountPasswd(account, passwd);
+        return userRepository.findByUserAccountAccountAndUserAccountPasswd(account, passwd);
     }
 
     @Override
     public void flush() {
-        repository.flush();
+        userRepository.flush();
     }
 
     @Override
     public List<User> findAll() {
-        return repository.findAll();
+        return userRepository.findAll();
     }
 
     @Override
     public Optional<User> findById(Integer id) {
-        return repository.findById(id);
+        return userRepository.findById(id);
     }
 
     @Override
     public <S extends User> S save(S entity) {
-        return repository.save(entity);
+        return userRepository.save(entity);
     }
 
+    private final UserRepository userRepository;
 }

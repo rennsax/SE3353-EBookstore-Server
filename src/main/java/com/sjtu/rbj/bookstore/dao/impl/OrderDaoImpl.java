@@ -3,7 +3,6 @@ package com.sjtu.rbj.bookstore.dao.impl;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.sjtu.rbj.bookstore.dao.OrderDao;
@@ -15,8 +14,9 @@ import com.sjtu.rbj.bookstore.repository.OrderRepository;
  */
 @Repository
 public class OrderDaoImpl implements OrderDao {
-    @Autowired
-    private OrderRepository orderRepository;
+    public OrderDaoImpl(OrderRepository orderRepository) {
+        this.orderRepository = orderRepository;
+    }
 
     @Override
     public <S extends Order> S save(S entity) {
@@ -43,4 +43,5 @@ public class OrderDaoImpl implements OrderDao {
         return orderRepository.findAll();
     }
 
+    private final OrderRepository orderRepository;
 }

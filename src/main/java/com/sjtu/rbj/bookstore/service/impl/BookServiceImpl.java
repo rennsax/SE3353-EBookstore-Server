@@ -5,7 +5,6 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.UUID;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,8 +20,9 @@ import com.sjtu.rbj.bookstore.service.BookService;
 @Service
 public class BookServiceImpl implements BookService {
 
-    @Autowired
-    private BookDao bookDao;
+    public BookServiceImpl(BookDao bookDao) {
+        this.bookDao = bookDao;
+    }
 
     @Override
     public Book getBookByUuid(UUID uuid) {
@@ -80,4 +80,5 @@ public class BookServiceImpl implements BookService {
         return bookDao.save(book);
     }
 
+    private final BookDao bookDao;
 }

@@ -17,6 +17,7 @@ import com.sjtu.rbj.bookstore.service.FileStorageService;
  */
 @RestController
 @CrossOrigin(value = Constants.ALLOW_ORIGIN)
+// TODO a strange class
 public class StorageController {
 
     @Autowired

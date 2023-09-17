@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.sjtu.rbj.bookstore.dao.BookDao;
@@ -17,8 +16,10 @@ import com.sjtu.rbj.bookstore.repository.BookRepository;
  */
 @Repository
 public class BookDaoImpl implements BookDao {
-    @Autowired
-    private BookRepository bookRepository;
+
+    public BookDaoImpl(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
 
     @Override
     public Optional<Book> findByUuid(UUID uuid) {
@@ -54,5 +55,7 @@ public class BookDaoImpl implements BookDao {
     public <S extends Book> S save(S entity) {
         return bookRepository.save(entity);
     }
+
+    private final BookRepository bookRepository;
 
 }

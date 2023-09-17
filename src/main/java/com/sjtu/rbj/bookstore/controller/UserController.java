@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -48,6 +47,10 @@ class NoSuchUserException extends NoSuchElementException {
 @RequestMapping("/users")
 @CrossOrigin(Constants.ALLOW_ORIGIN)
 public class UserController {
+
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     @GetMapping
     public UserInfoDTO getUserInfoByAccount(
@@ -168,6 +171,5 @@ public class UserController {
         return userService.getUserInfoByAccount(account);
     }
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
 }

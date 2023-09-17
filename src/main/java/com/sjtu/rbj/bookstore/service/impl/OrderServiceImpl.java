@@ -9,7 +9,6 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.regex.Pattern;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,11 +26,11 @@ import com.sjtu.rbj.bookstore.service.OrderService;
  */
 @Service
 public class OrderServiceImpl implements OrderService {
-    @Autowired
-    private OrderDao orderDao;
 
-    @Autowired
-    private BookDao bookDao;
+    public OrderServiceImpl(OrderDao orderDao, BookDao bookDao) {
+        this.orderDao = orderDao;
+        this.bookDao = bookDao;
+    }
 
     @Override
     public OrderInfoDTO getOrderInfoByOrderId(Integer orderId) {
@@ -180,4 +179,7 @@ public class OrderServiceImpl implements OrderService {
         return orderList;
     }
 
+    private final OrderDao orderDao;
+
+    private final BookDao bookDao;
 }

@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.UUID;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -37,6 +36,10 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/books")
 @CrossOrigin(Constants.ALLOW_ORIGIN)
 public class BookController {
+
+    public BookController(BookService bookService) {
+        this.bookService = bookService;
+    }
 
     @Administer
     @PutMapping
@@ -99,7 +102,6 @@ public class BookController {
         }
     }
 
-    @Autowired
-    private BookService bookService;
+    private final BookService bookService;
 
 }

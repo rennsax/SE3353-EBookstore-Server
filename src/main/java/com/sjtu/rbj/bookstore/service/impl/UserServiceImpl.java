@@ -7,7 +7,6 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,8 +31,9 @@ import com.sjtu.rbj.bookstore.service.UserService;
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
-    private UserDao userDao;
+    public UserServiceImpl(UserDao userDao) {
+        this.userDao = userDao;
+    }
 
     @Override
     public List<User> getAllUsers() {
@@ -188,4 +188,6 @@ public class UserServiceImpl implements UserService {
         return new UserStatisticDTO(userId, beginTimestamp, endTimestamp, bookOrderedDTOList,
                 PriceHandler.from(totalCost).toString());
     }
+
+    private final UserDao userDao;
 }

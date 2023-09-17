@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -28,6 +27,10 @@ class LoginErrorException extends RuntimeException {
 @RestController
 @CrossOrigin(Constants.ALLOW_ORIGIN)
 public class LoginController {
+
+    public LoginController(UserService userService) {
+        this.userService = userService;
+    }
 
     /** See below */
     @Deprecated
@@ -56,6 +59,5 @@ public class LoginController {
         return ResponseEntity.ok().body(jsonNode);
     }
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
 }

@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,8 +37,9 @@ import lombok.NoArgsConstructor;
 @CrossOrigin(Constants.ALLOW_ORIGIN)
 public class OrderController {
 
-    @Autowired
-    private OrderService orderService;
+    public OrderController(OrderService orderService) {
+        this.orderService = orderService;
+    }
 
     @GetMapping("/{orderId}")
     public OrderInfoDTO getOrderInfo(@PathVariable Integer orderId) {
@@ -143,4 +143,6 @@ public class OrderController {
             orderList.removeIf(order -> date.getTime() < order.getTime().getTime());
         }
     }
+
+    private final OrderService orderService;
 }
