@@ -8,6 +8,7 @@ import org.springframework.core.NestedRuntimeException;
 public class IncompleteRequestBodyException extends NestedRuntimeException {
     /**
      * Create a new IncompleteRequestBodyException.
+     *
      * @param msg the detail message
      */
     public IncompleteRequestBodyException(String msg) {

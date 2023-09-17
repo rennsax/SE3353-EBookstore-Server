@@ -17,14 +17,16 @@ public interface BookService {
      * Get book information for homepage, from the top of the database
      *
      * @param limit the maximum number of books to get.
-     *        Constraints: {@code 1 <= limit <= 20}. Otherwise, it's forced to be resized.
+     *              Constraints: {@code 1 <= limit <= 20}. Otherwise, it's forced to
+     *              be resized.
      * @return {@code List<Book>} with size no more than {@code limit}
      */
     List<Book> getBookListForHomePage(Integer limit);
 
     /**
      * Get book information for homepage, from the top of the database
-     * @param limit the maximum number of books to get
+     *
+     * @param limit  the maximum number of books to get
      * @param offset the beginning row number to get book information
      * @return {@code List<Book>}
      */
@@ -41,32 +43,33 @@ public interface BookService {
 
     /**
      * Get all books from the database.
+     *
      * @return list of book entities.
      */
     List<Book> getAllBooks();
 
     /**
      * Update the book.
+     *
      * @param bookDTO
      */
     void updateBook(BookDTO bookDTO);
 
-
     /**
      * Delete the book from database.
+     *
      * @param uuid must not be {@literal null}.
      * @throws NoSuchElementException if the book to be deleted can't be found.
      */
     void deleteBookByUuid(UUID uuid);
 
-
     /**
      * Find books by title, case insensitive.
+     *
      * @param keyword must not be {@literal null}.
      * @return list of found results.
      */
     List<Book> findBookByTitle(String keyword);
-
 
     /**
      * Add a book entity.

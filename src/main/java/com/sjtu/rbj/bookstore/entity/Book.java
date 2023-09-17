@@ -37,10 +37,7 @@ public class Book implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(
-        columnDefinition = "BINARY(16) DEFAULT(UUID_TO_BIN(UUID()))",
-        nullable = false, unique = true
-    )
+    @Column(columnDefinition = "BINARY(16) DEFAULT(UUID_TO_BIN(UUID()))", nullable = false, unique = true)
     private UUID uuid;
 
     @Column(nullable = false)
@@ -91,7 +88,7 @@ public class Book implements Serializable {
         if (obj.getClass() != this.getClass()) {
             return false;
         }
-        Book other = ((Book)obj);
+        Book other = ((Book) obj);
         if (other.uuid == null) {
             return false;
         }

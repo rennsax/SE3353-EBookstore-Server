@@ -15,7 +15,6 @@ public class BookOrderedDTO extends BookOrdered {
 
     private String totalBudget;
 
-
     public BookOrderedDTO(UUID uuid, Integer quantity, String totalBudget) {
         super(uuid, quantity);
         this.totalBudget = totalBudget;

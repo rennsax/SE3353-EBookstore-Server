@@ -20,6 +20,7 @@ public class PriceHandler {
 
     /**
      * Create from the price only. The default decimal place is 2.
+     *
      * @param price
      */
     public PriceHandler(Integer price) {

@@ -48,12 +48,7 @@ public class Order {
 
     @ToString.Exclude
     @ManyToOne
-    @JoinColumn(
-        name = "`user_id`",
-        nullable = false,
-        referencedColumnName = "`id`",
-        foreignKey = @ForeignKey(name = "order_user_fk")
-    )
+    @JoinColumn(name = "`user_id`", nullable = false, referencedColumnName = "`id`", foreignKey = @ForeignKey(name = "order_user_fk"))
     private User user;
 
     @Generated(GenerationTime.INSERT)
@@ -64,11 +59,7 @@ public class Order {
     @Column(nullable = false, columnDefinition = "CHAR(20)")
     private OrderState state = OrderState.COMPLETE;
 
-    @OneToMany(
-        mappedBy = "order",
-        cascade = CascadeType.ALL,
-        orphanRemoval = true
-    )
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderItem> orderItemList = new ArrayList<>();
 
     public Boolean addOrderItem(OrderItem orderItem) {
@@ -104,21 +95,12 @@ public class Order {
         private Integer id;
 
         @ManyToOne
-        @JoinColumn(
-            name = "`order_id`",
-            nullable = false,
-            referencedColumnName = "`id`",
-            foreignKey = @ForeignKey(name = "order_item_fk")
-        )
+        @JoinColumn(name = "`order_id`", nullable = false, referencedColumnName = "`id`", foreignKey = @ForeignKey(name = "order_item_fk"))
         private Order order;
 
         /** unidirectional association */
         @OneToOne
-        @JoinColumn(
-            name = "`item_id`",
-            referencedColumnName = "`uuid`",
-            foreignKey = @ForeignKey(name = "item_uuid_fk")
-        )
+        @JoinColumn(name = "`item_id`", referencedColumnName = "`uuid`", foreignKey = @ForeignKey(name = "item_uuid_fk"))
         private Book book;
 
         @Column(nullable = false)

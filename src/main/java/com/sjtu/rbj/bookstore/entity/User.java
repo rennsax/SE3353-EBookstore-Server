@@ -66,6 +66,7 @@ public class User {
     /**
      * Create an user entity with the account and password,
      * leave the primary key null, with default user type {@literal normal}
+     *
      * @param account
      * @param passwd
      */
