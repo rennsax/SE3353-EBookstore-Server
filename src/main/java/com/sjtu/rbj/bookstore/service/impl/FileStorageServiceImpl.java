@@ -18,7 +18,6 @@ import com.sjtu.rbj.bookstore.service.FileStorageService;
 
 /**
  * @author Bojun Ren
- * @data 2023/06/20
  */
 @Service
 public class FileStorageServiceImpl implements FileStorageService {

@@ -11,7 +11,6 @@ import com.sjtu.rbj.bookstore.entity.Book;
 
 /**
  * @author Bojun Ren
- * @data 2023/04/19
  */
 public interface BookRepository extends JpaRepository<Book, Integer> {
 

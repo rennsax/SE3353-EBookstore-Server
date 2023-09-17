@@ -14,7 +14,6 @@ import com.sjtu.rbj.bookstore.exception.IncompleteRequestBodyException;
 
 /**
  * @author Bojun Ren
- * @data 2023/06/16
  */
 @ControllerAdvice
 @ResponseBody

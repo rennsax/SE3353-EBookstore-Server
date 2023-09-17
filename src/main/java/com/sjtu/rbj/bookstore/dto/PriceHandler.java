@@ -4,7 +4,6 @@ package com.sjtu.rbj.bookstore.dto;
  * An util class to handle the price.
  *
  * @author Bojun Ren
- * @data 2023/05/07
  */
 public class PriceHandler {
 

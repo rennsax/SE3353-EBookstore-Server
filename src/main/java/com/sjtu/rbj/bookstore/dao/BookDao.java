@@ -8,7 +8,6 @@ import com.sjtu.rbj.bookstore.entity.Book;
 
 /**
  * @author Bojun Ren
- * @date 2023/04/19
  */
 public interface BookDao {
 

@@ -32,7 +32,6 @@ import lombok.NoArgsConstructor;
 
 /**
  * @author Bojun Ren
- * @date 2023/04/19
  */
 @RestController
 @RequestMapping(path = "/orders")

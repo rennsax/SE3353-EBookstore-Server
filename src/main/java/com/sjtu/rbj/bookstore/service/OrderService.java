@@ -9,7 +9,6 @@ import com.sjtu.rbj.bookstore.entity.Order;
 
 /**
  * @author Bojun Ren
- * @data 2023/04/29
  */
 public interface OrderService {
     /**

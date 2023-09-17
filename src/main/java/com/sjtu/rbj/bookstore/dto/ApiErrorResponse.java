@@ -9,7 +9,6 @@ import lombok.Data;
 
 /**
  * @author Bojun Ren
- * @data 2023/05/31
  */
 @Data
 @Builder

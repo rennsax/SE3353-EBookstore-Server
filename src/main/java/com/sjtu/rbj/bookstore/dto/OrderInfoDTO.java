@@ -16,7 +16,6 @@ import lombok.NoArgsConstructor;
 
 /**
  * @author Bojun Ren
- * @data 2023/04/24
  */
 @Data
 @NoArgsConstructor

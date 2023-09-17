@@ -9,7 +9,6 @@ import lombok.Getter;
 
 /**
  * @author Bojun Ren
- * @data 2023/04/23
  */
 @Getter
 public class BookOrderedDTO extends BookOrdered {

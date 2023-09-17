@@ -14,7 +14,6 @@ import com.sjtu.rbj.bookstore.service.FileStorageService;
 
 /**
  * @author Bojun Ren
- * @data 2023/06/20
  */
 @RestController
 @CrossOrigin(value = Constants.ALLOW_ORIGIN)

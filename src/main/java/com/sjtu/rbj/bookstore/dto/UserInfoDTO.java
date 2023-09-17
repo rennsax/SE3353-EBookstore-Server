@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
  * DTO for {@link com.sjtu.rbj.bookstore.entity.User}
  *
  * @author Bojun Ren
- * @data 2023/04/23
  */
 @Data
 @NoArgsConstructor

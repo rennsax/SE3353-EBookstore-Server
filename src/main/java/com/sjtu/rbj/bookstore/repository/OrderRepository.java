@@ -8,7 +8,6 @@ import com.sjtu.rbj.bookstore.entity.Order;
 
 /**
  * @author Bojun Ren
- * @data 2023/04/23
  */
 public interface OrderRepository extends JpaRepository<Order, Integer> {
     /**
@@ -16,7 +15,7 @@ public interface OrderRepository extends JpaRepository<Order, Integer> {
      *
      * @param userId must not be {@literal null}
      * @return all order entities belonging to the target user.
-	 * @throws IllegalArgumentException if {@literal userId} is {@literal null}.
+     * @throws IllegalArgumentException if {@literal userId} is {@literal null}.
      */
     List<Order> findByUserId(Integer userId);
 }

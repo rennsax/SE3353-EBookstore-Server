@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 
 /**
  * @author Bojun Ren
- * @data 2023/05/30
  */
 @Getter
 @NoArgsConstructor

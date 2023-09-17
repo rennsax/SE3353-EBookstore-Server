@@ -24,7 +24,6 @@ class LoginErrorException extends RuntimeException {
 
 /**
  * @author Bojun Ren
- * @date 2023/04/08
  */
 @RestController
 @CrossOrigin(Constants.ALLOW_ORIGIN)

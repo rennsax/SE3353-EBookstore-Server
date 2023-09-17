@@ -40,7 +40,6 @@ class NoSuchUserException extends NoSuchElementException {
 
 /**
  * @author Bojun Ren
- * @data 2023/04/23
  * @apiNote This api need to be re-designed until some security features are
  *          added.
  */

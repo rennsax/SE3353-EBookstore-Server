@@ -12,7 +12,6 @@ import lombok.ToString;
  * In fact, this DTO just transfer the price field into String.
  *
  * @author Bojun Ren
- * @data 2023/05/07
  */
 @Getter
 @ToString

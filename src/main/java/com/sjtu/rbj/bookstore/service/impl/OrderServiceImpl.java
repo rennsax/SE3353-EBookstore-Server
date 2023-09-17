@@ -24,7 +24,6 @@ import com.sjtu.rbj.bookstore.service.OrderService;
 
 /**
  * @author Bojun Ren
- * @data 2023/04/28
  */
 @Service
 public class OrderServiceImpl implements OrderService {
