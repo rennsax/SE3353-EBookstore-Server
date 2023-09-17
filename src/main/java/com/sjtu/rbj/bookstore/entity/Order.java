@@ -23,7 +23,7 @@ import jakarta.persistence.Table;
 import org.hibernate.annotations.Check;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.Generated;
-import org.hibernate.annotations.GenerationTime;
+import org.hibernate.generator.EventType;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -51,7 +51,7 @@ public class Order {
     @JoinColumn(name = "`user_id`", nullable = false, referencedColumnName = "`id`", foreignKey = @ForeignKey(name = "order_user_fk"))
     private User user;
 
-    @Generated(GenerationTime.INSERT)
+    @Generated(event = EventType.INSERT)
     @Column(nullable = false, columnDefinition = "TIMESTAMP DEFAULT(NOW())")
     private Timestamp time;
 
