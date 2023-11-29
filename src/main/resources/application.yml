@@ -1,0 +1,42 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url:
+      'jdbc:mysql://127.0.0.1:3306/bookstore?useUnicode=true&characterEncoding=utf-8'
+    username: root
+    password: 123456
+  jpa:
+    # show-sql: true
+    hibernate:
+      # To initialize the data, this must be set to none
+      ddl-auto: none
+      # ddl-auto: create
+    properties:
+      hibernate:
+        '[format_sql]': true
+  sql:
+    init:
+      mode: always
+      platform: mysql
+
+  # data:
+  #   redis:
+  #     host: '127.0.0.1'
+  #   mongodb:
+  #     uri: 'mongodb://localhost:27017/bookstore'
+
+  # kafka:
+  #   bootstrap-servers: localhost:9092
+  #   consumer:
+  #     group-id: "group-id"
+
+# org:
+#   neo4j:
+#     driver:
+#       uri:
+#         bolt://localhost:7687
+
+
+# logging:
+#   level:
+#     '[org.apache.kafka]': OFF
