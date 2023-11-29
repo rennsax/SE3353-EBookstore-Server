@@ -38,4 +38,4 @@ out/
 
 
 ### static resources ###
-**/resources
+/src/**/resources/static/
